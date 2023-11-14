@@ -21,8 +21,15 @@ const postCategoriy = async function (req, res) {
   }
 };
 
+const putProduct = async function (req, res) {
+  const result = await categoriyService.putProduct(req.body);
+  // console.log(result);
+  res.send(result);
+};
+
 const categoriyController = {
   postCategoriy,
+  putProduct,
 };
 
 module.exports = categoriyController;

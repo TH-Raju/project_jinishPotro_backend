@@ -8,5 +8,6 @@
   - /api/v1/login (POST)
   - /api/v1/signup (POST)
 
-- Categoriy Routes
+- Categoriy & Product Routes
   - /api/v1/categoriy (POST)
+  - /api/v1/categoriy/product (PUT)
