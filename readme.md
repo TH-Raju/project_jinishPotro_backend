@@ -9,10 +9,15 @@
   - /api/v1/signup (POST)
 
 - Categoriy & Product Routes
+
   - /api/v1/categoriy (POST)
   - /api/v1/categoriy/product (PUT)
   - /api/v1/categoriy/:id (DELETE)
   - /api/v1/categoriy/:categoryId/products/:productId (DELETE)
+  - /api/v1/categoriy/:categoriyId/products/:productId/review/:reviewId (DELETE)
+
+- Review
+  - /api/v1/categoriy/product/review (PUT)
 
 ## Demo Data
 
@@ -39,5 +44,21 @@
     "title": "product 1 Title",
     "detail": "product 1 Details",
     "photo": "product.jpg"
+    }
+```
+
+- Review
+  - /api/v1/categoriy/product/review (PUT)
+
+```
+    {
+    "categoriyId": "Categoriy Id",
+    "productId": "Review Id",
+    "reviewData" : {
+        "user": "Th Raju",
+        "userId": "User Id",
+        "comment": "User Comment",
+        "rating": 5
+        }
     }
 ```

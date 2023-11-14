@@ -26,6 +26,13 @@ const putProduct = async function (req, res) {
   // console.log(result);
   res.send(result);
 };
+
+const putReview = async function (req, res) {
+  const result = await categoriyService.putReview(req.body);
+  // console.log(result);
+  res.send(result);
+};
+
 const deleteCategoriy = async function (req, res) {
   const categoriyId = req.params.id;
   // console.log(categoriyId);
@@ -40,11 +47,25 @@ const deleteProduct = async function (req, res) {
   res.send(result);
 };
 
+const deleteReview = async function (req, res) {
+  const categoryId = req.params.categoryId;
+  const productId = req.params.productId;
+  const reviewId = req.params.reviewId;
+  const result = await categoriyService.deleteReview(
+    categoryId,
+    productId,
+    reviewId
+  );
+  res.send(result);
+};
+
 const categoriyController = {
   postCategoriy,
   putProduct,
+  putReview,
   deleteCategoriy,
   deleteProduct,
+  deleteReview,
 };
 
 module.exports = categoriyController;
