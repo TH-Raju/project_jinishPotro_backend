@@ -21,10 +21,19 @@ let putProduct = async function (data) {
   return result;
 };
 
+let deleteProduct = async function (categoryId, productId) {
+  const filter = { _id: categoryId };
+  const update = { $pull: { products: { _id: productId } } };
+
+  const result = await Categoriy.updateOne(filter, update);
+
+  return result;
+};
 
 const categoriyService = {
   postCategoriy,
   putProduct,
+  deleteProduct,
 };
 
 module.exports = categoriyService;

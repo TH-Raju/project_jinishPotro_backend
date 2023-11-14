@@ -14,6 +14,9 @@ const productSchema = new Schema({
   photo: {
     type: String,
   },
+  discount: {
+    type: Number,
+  },
 });
 
 let categoriySchema = new Schema({

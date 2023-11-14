@@ -27,9 +27,17 @@ const putProduct = async function (req, res) {
   res.send(result);
 };
 
+const deleteProduct = async function (req, res) {
+  const categoryId = req.params.categoryId;
+  const productId = req.params.productId;
+  const result = await categoriyService.deleteProduct(categoryId, productId);
+  res.send(result);
+};
+
 const categoriyController = {
   postCategoriy,
   putProduct,
+  deleteProduct,
 };
 
 module.exports = categoriyController;

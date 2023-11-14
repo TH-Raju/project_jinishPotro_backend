@@ -11,6 +11,7 @@
 - Categoriy & Product Routes
   - /api/v1/categoriy (POST)
   - /api/v1/categoriy/product (PUT)
+  - /api/v1/categoriy/:categoryId/products/:productId (DELETE)
 
 ## Demo Data
 
