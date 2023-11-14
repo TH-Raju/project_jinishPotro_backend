@@ -10,6 +10,7 @@
 
 - Categoriy & Product Routes
 
+  - /api/v1/categoriy (GET)
   - /api/v1/categoriy (POST)
   - /api/v1/categoriy/product (PUT)
   - /api/v1/categoriy/:id (DELETE)

@@ -1,5 +1,10 @@
 const Categoriy = require("../models/Categoriy");
 
+let getCategoriy = async function () {
+  const result = await Categoriy.find();
+  return result;
+};
+
 let postCategoriy = async function (data) {
   const result = await Categoriy.create(data);
   return result;
@@ -64,6 +69,7 @@ let deleteReview = async function (categoryId, productId, reviewId) {
 };
 
 const categoriyService = {
+  getCategoriy,
   postCategoriy,
   putProduct,
   deleteCategoriy,

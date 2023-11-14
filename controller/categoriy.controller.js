@@ -1,5 +1,25 @@
 const categoriyService = require("../service/categoriyService");
 
+const getCategoriy = async function (req, res) {
+  const result = await categoriyService.getCategoriy();
+  if (result) {
+    let data = {
+      success: true,
+      message: " Successfully Find",
+      status: 200,
+      data: result,
+    };
+    res.send(data);
+  } else {
+    let data = {
+      success: true,
+      message: " Not find any data",
+      status: 400,
+      data: {},
+    };
+    res.send(data);
+  }
+};
 const postCategoriy = async function (req, res) {
   const result = await categoriyService.postCategoriy(req.body);
   if (result) {
@@ -60,6 +80,7 @@ const deleteReview = async function (req, res) {
 };
 
 const categoriyController = {
+  getCategoriy,
   postCategoriy,
   putProduct,
   putReview,
