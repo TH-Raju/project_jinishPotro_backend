@@ -26,6 +26,12 @@ const putProduct = async function (req, res) {
   // console.log(result);
   res.send(result);
 };
+const deleteCategoriy = async function (req, res) {
+  const categoriyId = req.params.id;
+  // console.log(categoriyId);
+  const result = await categoriyService.deleteCategoriy(categoriyId);
+  res.send(result);
+};
 
 const deleteProduct = async function (req, res) {
   const categoryId = req.params.categoryId;
@@ -37,6 +43,7 @@ const deleteProduct = async function (req, res) {
 const categoriyController = {
   postCategoriy,
   putProduct,
+  deleteCategoriy,
   deleteProduct,
 };
 

@@ -4,6 +4,10 @@ const router = express.Router();
 
 router.post("/", categoriyController.postCategoriy);
 router.put("/product", categoriyController.putProduct);
-router.delete('/:categoryId/products/:productId', categoriyController.deleteProduct)
+router.delete("/:id", categoriyController.deleteCategoriy);
+router.delete(
+  "/:categoryId/products/:productId",
+  categoriyController.deleteProduct
+);
 
 module.exports = router;

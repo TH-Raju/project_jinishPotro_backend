@@ -20,6 +20,10 @@ let putProduct = async function (data) {
 
   return result;
 };
+const deleteCategoriy = async function (categoriyId) {
+  const result = await Categoriy.deleteOne({ _id: categoriyId });
+  return result;
+};
 
 let deleteProduct = async function (categoryId, productId) {
   const filter = { _id: categoryId };
@@ -33,6 +37,7 @@ let deleteProduct = async function (categoryId, productId) {
 const categoriyService = {
   postCategoriy,
   putProduct,
+  deleteCategoriy,
   deleteProduct,
 };
 
