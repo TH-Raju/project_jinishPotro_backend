@@ -42,9 +42,13 @@
     {
     "categoriyId": "Categoriy ID Here",
     "name": "product 1",
-    "title": "product 1 Title",
     "detail": "product 1 Details",
-    "photo": "product.jpg"
+    "sellerName": "TH Raju",
+    "sellerId": "seller Id",
+    "photo": "product.jpg",
+    "price": 200,
+    "discount": 5,
+    "review": []
     }
 ```
 
