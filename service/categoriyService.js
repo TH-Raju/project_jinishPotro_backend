@@ -7,7 +7,7 @@ let postCategoriy = async function (data) {
 
 let putProduct = async function (data) {
   // const result = await Categoriy.create(data);
-  console.log("service ", data);
+  // console.log("service ", data);
   const id = data.categoriyId;
   const filter = { _id: id };
   const options = { upsert: true };
@@ -20,6 +20,7 @@ let putProduct = async function (data) {
 
   return result;
 };
+
 
 const categoriyService = {
   postCategoriy,

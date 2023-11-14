@@ -1,6 +1,21 @@
 let mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
+const productSchema = new Schema({
+  name: {
+    type: String,
+  },
+  title: {
+    type: String,
+  },
+  detail: {
+    type: String,
+  },
+  photo: {
+    type: String,
+  },
+});
+
 let categoriySchema = new Schema({
   name: {
     type: String,
@@ -14,7 +29,7 @@ let categoriySchema = new Schema({
   photo: {
     type: String,
   },
-  products: [],
+  products: [productSchema],
 });
 
 let Categoriy = mongoose.model("categoriy", categoriySchema);
