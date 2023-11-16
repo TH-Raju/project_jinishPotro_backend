@@ -1,7 +1,11 @@
 const Categoriy = require("../models/Categoriy");
-
+const { ObjectId } = require("mongoose").Types;
 let getCategoriy = async function () {
   const result = await Categoriy.find();
+  return result;
+};
+let getCategoriyById = async function (categoriyId) {
+  const result = await Categoriy.findOne({ _id: categoriyId });
   return result;
 };
 
@@ -44,6 +48,35 @@ let putReview = async function (data) {
   return result;
 };
 
+let getProductById = async function (categoryId, productId) {
+  try {
+    const result = await Categoriy.findOne({ _id: categoryId });
+
+    if (!result) {
+      console.log("Category not found");
+      return null;
+    }
+
+    // Convert the productId to ObjectId
+    const targetProductId = new ObjectId(productId);
+
+    const foundProduct = result.products.find((product) =>
+      product._id.equals(targetProductId)
+    );
+
+    if (!foundProduct) {
+      console.log("Product not found in the category");
+      return null;
+    }
+
+    console.log("Found product:", foundProduct);
+    return foundProduct;
+  } catch (error) {
+    console.error("Error:", error.message);
+    throw error;
+  }
+};
+
 const deleteCategoriy = async function (categoriyId) {
   const result = await Categoriy.deleteOne({ _id: categoriyId });
   return result;
@@ -70,8 +103,10 @@ let deleteReview = async function (categoryId, productId, reviewId) {
 
 const categoriyService = {
   getCategoriy,
+  getCategoriyById,
   postCategoriy,
   putProduct,
+  getProductById,
   deleteCategoriy,
   deleteProduct,
   deleteReview,

@@ -11,8 +11,10 @@
 - Categoriy & Product Routes
 
   - /api/v1/categoriy (GET)
+  - /api/v1/categoriy/:id (GET Single)
   - /api/v1/categoriy (POST)
   - /api/v1/categoriy/product (PUT)
+  - /api/v1/categoriy/:categoryId/product/:productId
   - /api/v1/categoriy/:id (DELETE)
   - /api/v1/categoriy/:categoryId/products/:productId (DELETE)
   - /api/v1/categoriy/:categoriyId/products/:productId/review/:reviewId (DELETE)
