@@ -8,11 +8,17 @@ const reviewSchema = new Schema({
   userId: {
     type: String,
   },
+  userPhoto: {
+    type: String,
+  },
   comment: {
     type: String,
   },
   rating: {
     type: Number,
+  },
+  date: {
+    type: String,
   },
 });
 

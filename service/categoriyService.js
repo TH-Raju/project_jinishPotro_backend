@@ -69,7 +69,7 @@ let getProductById = async function (categoryId, productId) {
       return null;
     }
 
-    console.log("Found product:", foundProduct);
+    // console.log("Found product:", foundProduct);
     return foundProduct;
   } catch (error) {
     console.error("Error:", error.message);
