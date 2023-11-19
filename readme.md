@@ -20,13 +20,15 @@
   - /api/v1/categoriy/:categoriyId/products/:productId/review/:reviewId (DELETE)
 
 - Review
+
   - /api/v1/categoriy/product/review (PUT)
   - /api/v1/categoriy/:categoriyId/products/:productId/review/:reviewId (DELETE)
 
 - Order
   - /api/v1/order/create (POST)
   - /api/v1/order/ (GET)
-
+  - /api/v1/order/:id (DELETE)
+  - /api/v1/order/update/:id (PATCH)
 
 ## Demo Data
 
