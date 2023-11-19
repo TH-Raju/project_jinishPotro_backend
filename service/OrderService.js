@@ -14,3 +14,5 @@ const orderService = {
   createOrderService,
   getOrderService,
 };
+
+module.exports = orderService;

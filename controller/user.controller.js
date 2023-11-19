@@ -14,7 +14,7 @@ const createToken = (params, secret, expiresIn = null) => {
 
 let getUser = async function (req, res) {
   const result = await userService.getUserService();
-  console.log(result);
+  // console.log(result);
   if (result) {
     let data = {
       success: true,
