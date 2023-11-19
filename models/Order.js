@@ -29,12 +29,15 @@ let orderSchema = new Schema(
     },
     transaction: {
       type: String,
-    }
+    },
+    status: {
+      type: String,
+      enum: ["Pending", "Cancel", "Confirm"],
+      default: "Pending",
+    },
   },
   { timestamps: true }
 );
-
-
 
 let Order = mongoose.model("order", orderSchema);
 module.exports = Order;
