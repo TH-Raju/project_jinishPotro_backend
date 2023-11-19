@@ -23,6 +23,9 @@
   - /api/v1/categoriy/product/review (PUT)
   - /api/v1/categoriy/:categoriyId/products/:productId/review/:reviewId (DELETE)
 
+- Order
+  - /api/v1/order/create (POST)
+  - /api/v1/order/ (GET)
 
 
 ## Demo Data
