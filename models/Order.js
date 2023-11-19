@@ -9,6 +9,9 @@ let orderSchema = new Schema(
     productId: {
       type: String,
     },
+    userId: {
+      type: String,
+    },
     productName: {
       type: String,
     },
@@ -18,6 +21,9 @@ let orderSchema = new Schema(
     userEmail: {
       type: String,
     },
+    userName: {
+      type: String,
+    },
     userPhone: {
       type: String,
     },
@@ -25,7 +31,7 @@ let orderSchema = new Schema(
       type: Number,
     },
     sendMoney: {
-      type: Number,
+      type: String,
     },
     transaction: {
       type: String,

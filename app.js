@@ -4,6 +4,7 @@ const json = require("express").json;
 const cors = require("cors");
 const userRouter = require("./route/user.route");
 const categoriyRouters = require("./route/categoriy.route");
+const orderRoutes = require("./route/order.route");
 
 app.use(json());
 app.use(cors());
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1", userRouter);
 app.use("/api/v1/categoriy", categoriyRouters);
+app.use("/api/v1/order", orderRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server Running...");
