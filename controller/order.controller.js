@@ -30,9 +30,17 @@ let getOrders = async function (req, res) {
   }
 };
 
+const deleteOrder = async function (req, res) {
+  const orderId = req.params.id;
+  // console.log(orderId);
+  const result = await orderService.deleteOrder(orderId);
+  res.send(result);
+};
+
 const orderController = {
   createOrder,
   getOrders,
+  deleteOrder,
 };
 
 module.exports = orderController;

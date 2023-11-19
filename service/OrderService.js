@@ -10,9 +10,15 @@ let createOrderService = async function (data) {
   return result;
 };
 
+const deleteOrder = async function (orderId) {
+  const result = await Order.deleteOne({ _id: orderId });
+  return result;
+};
+
 const orderService = {
   createOrderService,
   getOrderService,
+  deleteOrder,
 };
 
 module.exports = orderService;
