@@ -15,10 +15,16 @@ const deleteOrder = async function (orderId) {
   return result;
 };
 
+const updateOrder = async function (id, datas) {
+  const result = Order.findOneAndUpdate({ _id: id }, datas, { new: true });
+  return result;
+};
+
 const orderService = {
   createOrderService,
   getOrderService,
   deleteOrder,
+  updateOrder,
 };
 
 module.exports = orderService;

@@ -6,6 +6,9 @@ let orderSchema = new Schema(
     categoryId: {
       type: String,
     },
+    categoryName: {
+      type: String,
+    },
     productId: {
       type: String,
     },
