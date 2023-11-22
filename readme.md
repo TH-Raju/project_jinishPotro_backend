@@ -5,8 +5,12 @@
 - User Authentication
 
   - /api/v1/user (GET)
+  - /api/v1/user/:id (GET)
   - /api/v1/login (POST)
   - /api/v1/signup (POST)
+  - /api/v1/user/update/admin/:id (PUT)
+  - /api/v1/user/update/to/user/:id (PUT)
+  - /api/v1/user/delete/:id (DELETE)
 
 - Categoriy & Product Routes
 
