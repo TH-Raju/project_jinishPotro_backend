@@ -32,7 +32,7 @@ function updateToUserService(id, datas) {
   var options = { upsert: true };
   var updatedDoc = {
     $set: {
-      role: "user",
+      role: "buyer",
     },
   };
 
