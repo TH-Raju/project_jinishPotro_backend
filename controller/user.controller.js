@@ -125,11 +125,82 @@ let loginUser = async function (req, res) {
   }
 };
 
+async function updateToAdmin(req, res) {
+  try {
+    const id = req.params.id;
+
+    const users = await userService.updateToAdminService(id);
+    let data = {
+      success: true,
+      message: "Successful",
+      status: 200,
+      data: users,
+    };
+    res.send(data);
+  } catch (error) {
+    let data = {
+      success: true,
+      message: "Unsuccessful",
+      status: 400,
+      data: {},
+    };
+    res.send(data);
+  }
+}
+
+async function updateToUser(req, res) {
+  try {
+    const id = req.params.id;
+
+    const users = await userService.updateToUserService(id);
+    let data = {
+      success: true,
+      message: "Successful",
+      status: 200,
+      data: users,
+    };
+    res.send(data);
+  } catch (error) {
+    let data = {
+      success: true,
+      message: "Unsuccessful",
+      status: 400,
+      data: {},
+    };
+    res.send(data);
+  }
+}
+
+async function deleteSingleUser(req, res) {
+  try {
+    const id = req.params.id;
+    const users = await userService.deleteSingleUserService(id);
+    let data = {
+      success: true,
+      message: "Successfully Delete",
+      status: 200,
+      data: users,
+    };
+    res.send(data);
+  } catch (error) {
+    let data = {
+      success: true,
+      message: "Unsuccessful",
+      status: 400,
+      data: {},
+    };
+    res.send(data);
+  }
+}
+
 const userController = {
   getUser,
   getUserById,
   signUp,
   loginUser,
+  updateToAdmin,
+  updateToUser,
+  deleteSingleUser,
 };
 
 module.exports = userController;
