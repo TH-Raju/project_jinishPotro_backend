@@ -24,6 +24,19 @@ let getUser = async function (req, res) {
     res.send(data);
   }
 };
+let getUserById = async function (req, res) {
+  const userId = req.params.id;
+  const result = await userService.getUserById(userId);
+  // console.log(result);
+  if (result) {
+    let data = {
+      success: true,
+      status: 200,
+      data: result,
+    };
+    res.send(data);
+  }
+};
 
 let signUp = async function (req, res) {
   try {
@@ -114,6 +127,7 @@ let loginUser = async function (req, res) {
 
 const userController = {
   getUser,
+  getUserById,
   signUp,
   loginUser,
 };

@@ -25,7 +25,7 @@ let userSchema = new Schema(
     },
     role: {
       type: String,
-      enum: ["buyer","seller", "admin", "super_admin"],
+      enum: ["buyer", "seller", "admin", "super_admin"],
       default: "buyer",
     },
   },

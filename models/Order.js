@@ -12,6 +12,9 @@ let orderSchema = new Schema(
     productId: {
       type: String,
     },
+    sellerId: {
+      type: String,
+    },
     userId: {
       type: String,
     },

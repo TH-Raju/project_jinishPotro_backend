@@ -5,12 +5,18 @@ let getUserService = async function (req, res) {
   return result;
 };
 
+let getUserById = async function (userId) {
+  const result = await User.find({ _id: userId });
+  return result;
+};
+
 let createUserService = async function (data) {
   let result = await User.create(data);
   return result;
 };
 const userService = {
   getUserService,
+  getUserById,
   createUserService,
 };
 
