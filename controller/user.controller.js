@@ -24,17 +24,29 @@ let getUser = async function (req, res) {
     res.send(data);
   }
 };
+
 let getUserById = async function (req, res) {
-  const userId = req.params.id;
-  const result = await userService.getUserById(userId);
-  // console.log(result);
-  if (result) {
-    let data = {
-      success: true,
-      status: 200,
-      data: result,
-    };
-    res.send(data);
+  const id = req.params.id;
+  try {
+    const result = await userService.getUserById(id);
+    // console.log(result);
+    if (result) {
+      let data = {
+        success: true,
+        status: 200,
+        data: result,
+      };
+      res.send(data);
+    } else {
+      let data = {
+        success: false,
+        status: 404,
+        data: {},
+      };
+      res.send(data);
+    }
+  } catch (error) {
+    console.log("Error Fetching get user by Id", error);
   }
 };
 
@@ -139,7 +151,7 @@ async function updateToAdmin(req, res) {
     res.send(data);
   } catch (error) {
     let data = {
-      success: true,
+      success: false,
       message: "Unsuccessful",
       status: 400,
       data: {},
@@ -162,7 +174,7 @@ async function updateToUser(req, res) {
     res.send(data);
   } catch (error) {
     let data = {
-      success: true,
+      success: false,
       message: "Unsuccessful",
       status: 400,
       data: {},
@@ -184,7 +196,7 @@ async function deleteSingleUser(req, res) {
     res.send(data);
   } catch (error) {
     let data = {
-      success: true,
+      success: false,
       message: "Unsuccessful",
       status: 400,
       data: {},

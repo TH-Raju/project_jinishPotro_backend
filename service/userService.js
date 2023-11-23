@@ -5,8 +5,8 @@ let getUserService = async function (req, res) {
   return result;
 };
 
-let getUserById = async function (userId) {
-  const result = await User.find({ _id: userId });
+let getUserById = async function (id) {
+  const result = await User.findById(id);
   return result;
 };
 
@@ -15,34 +15,41 @@ let createUserService = async function (data) {
   return result;
 };
 
-function updateToAdminService(id, datas) {
-  var filter = { _id: id };
-  var options = { upsert: true };
-  var updatedDoc = {
+async function updateToAdminService(id, datas) {
+  let filter = { _id: id };
+  let options = { upsert: true };
+  let updatedDoc = {
     $set: {
       role: "admin",
     },
   };
 
-  return User.findOneAndUpdate(filter, updatedDoc, options).select("-password");
+  let result = await User.findOneAndUpdate(filter, updatedDoc, options).select(
+    "-password"
+  );
+  return result;
 }
 
-function updateToUserService(id, datas) {
-  var filter = { _id: id };
-  var options = { upsert: true };
-  var updatedDoc = {
+async function updateToUserService(id, datas) {
+  let filter = { _id: id };
+  let options = { upsert: true };
+  let updatedDoc = {
     $set: {
       role: "buyer",
     },
   };
 
-  return User.findOneAndUpdate(filter, updatedDoc, options).select("-password");
+  let result = await User.findOneAndUpdate(filter, updatedDoc, options).select(
+    "-password"
+  );
+  return result;
 }
 
-function deleteSingleUserService(id) {
-  return User.deleteOne({
+async function deleteSingleUserService(id) {
+  let result = await User.deleteOne({
     _id: id,
   });
+  return result;
 }
 
 const userService = {

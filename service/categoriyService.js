@@ -1,4 +1,5 @@
 const Categoriy = require("../models/Categoriy");
+const mongoose = require("mongoose");
 const { ObjectId } = require("mongoose").Types;
 let getCategoriy = async function () {
   const result = await Categoriy.find();
