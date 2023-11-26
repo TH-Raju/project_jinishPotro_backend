@@ -1,4 +1,10 @@
-# JinishPotro Website
+# JinishPotro Backend
+
+## Entity Relationship Diagram
+
+- [Link of ER Diagram](https://drive.google.com/file/d/1X5xBuUGsqvhzn6WYZaxs2fCkfxbLh8ce/view?usp=sharing)
+
+![Jinishpotro ER diagram](./utils/er.PNG)
 
 # API's
 
